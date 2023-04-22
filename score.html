@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Score Table</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        padding: 5px;
+        text-align: center;
+      }
+      table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: 5px;
+  text-align: center;
+}
+
+    </style>
+  </head>
+  <body>
+    <h1>Score Table</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Score</th>
+          <th>Total Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="text" id="name1" /></td>
+          <td><input type="number" id="score1" /></td>
+          <td><span id="totalScore1">0</span></td>
+        </tr>
+        <tr>
+          <td><input type="text" id="name2" /></td>
+          <td><input type="number" id="score2" /></td>
+          <td><span id="totalScore2">0</span></td>
+        </tr>
+        <tr>
+          <td><input type="text" id="name3" /></td>
+          <td><input type="number" id="score3" /></td>
+          <td><span id="totalScore3">0</span></td>
+        </tr>
+        <tr>
+          <td><input type="text" id="name4" /></td>
+          <td><input type="number" id="score4" /></td>
+          <td><span id="totalScore4">0</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <button onclick="calculateTotal()">Calculate Total Score</button>
+    <script src="script.js"></script>
+    <script>
+    // Define variables to store total scores
+var totalScore1 = 0;
+var totalScore2 = 0;
+var totalScore3 = 0;
+var totalScore4 = 0;
+
+function calculateTotal() {
+  // Get input values
+  var score1 = Number(document.getElementById("score1").value);
+  var score2 = Number(document.getElementById("score2").value);
+  var score3 = Number(document.getElementById("score3").value);
+  var score4 = Number(document.getElementById("score4").value);
+
+  // Calculate total scores
+  totalScore1 += score1;
+  totalScore2 += score2;
+  totalScore3 += score3;
+  totalScore4 += score4;
+
+  // Update total score columns
+  document.getElementById("totalScore1").innerHTML = totalScore1;
+  document.getElementById("totalScore2").innerHTML = totalScore2;
+  document.getElementById("totalScore3").innerHTML = totalScore3;
+  document.getElementById("totalScore4").innerHTML = totalScore4;
+
+  // Reset input fields
+  document.getElementById("score1").value = "";
+  document.getElementById("score2").value = "";
+  document.getElementById("score3").value = "";
+  document.getElementById("score4").value = "";
+}
+</script>
+  </body>
+</html>
